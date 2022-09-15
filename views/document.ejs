@@ -1,0 +1,150 @@
+<%-include('include/_main_header.ejs') %> 
+
+
+
+  <% if (data) { %> 
+    
+  
+    <div class="twitter_header">
+        <div class="hide"><%= data._id %></div>
+        <div class="header_2" id="htmltoimage">
+            <!-- <input type="hidden" name="id" value=""> -->
+            <div class="img">
+                <img src="img/myNew-LOg0-01.png" alt="" class="logo">
+                <img src="img/jagaban222-01.png" alt="" class="logo">
+            </div>
+            <div class="img_3">
+                <div class="state">
+                    <p>I REP</p>
+                    <p><span class="green"><%= data.state %></span> STATE <span class="blue">APC</span></p>
+                </div>
+            <div class="uni">
+                <img id="love" src="data:user?<%=data.img.contentType%>;base64,<%=data.img.data.toString('base64')%>" alt="">
+            </div>
+                
+            </div>
+            <div class="name">
+                <span>My Name's</span> 
+                <p><%= data.name %></p>
+            </div>
+            <div class="job">
+                <p><%= data.job %></p>
+                <div class="Bat">
+                    <p>My Vote is for BAT  </p>
+                    <P>#I AM Strictly BATIFIED</P>
+                </div>
+            </div>
+        
+            <div class="username"><span><i class="fab fa-twitter"></i> follow me on twitter</span><P><%= data.username %></P></div>
+            
+        </div>
+       
+        
+    </div>
+    <div class="click"> <button id="download" class="clickbtn">Click To Download Image</button> </div>
+   
+    
+  <% } %>
+
+ <% if (data) { %> 
+  <div class="second">
+    <div class="body cover" id="html2image">
+        <div class="coat_of_arm arm">
+            <img src="img/Coat-of-Arms-of-Nigeria.png" alt="" width="100">
+        </div>
+        <div class="coat_of_arm human">
+            <img src="data:user?<%=data.img.contentType%>;base64,<%=data.img.data.toString('base64')%>" alt="" >
+        </div>
+        <div class="pen">
+            <p>My <span><i class="fas fa-heart"></i></span></p> <p class="nig">for <span>NIGERIA</span></p>
+            <p class="stu">is not <span>stupidity</span></p>
+            <p class="cal">it's called</p>  
+            <p>Patriotism</p>
+        </div>
+        <div class="h3"> <h3>I love NIGERIA</h3> </div>
+        
+    </div>
+</div>
+<div class="click"> <button id="downloads" class="clickbtn">Click To generate as jpg</button> </div>
+<% } %> 
+
+<script>
+
+    $(document).ready(function() {
+        $("#download").click(function() {
+        
+            var domNode = document.getElementById('htmltoimage');
+            domtoimage.toPng(domNode, {quality: 1, style:{ with:domNode.clientWidth*3, height:domNode.clientHeight*3}})
+            .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'swaga_header.jpeg';
+        link.href = dataUrl;
+        link.click();
+    })
+    
+        })
+    })
+
+    $(document).ready(function() {
+        $("#downloads").click(function() {
+        
+            var domNode = document.getElementById('html2image');
+            domtoimage.toPng(domNode, {quality: 1, style:{ with:domNode.clientWidth*3, height:domNode.clientHeight*3}})
+            .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = 'swaga_profile.jpeg';
+        link.href = dataUrl;
+        link.click();
+    })
+    
+        })
+    })
+
+
+
+    // function downloadimage() {
+    //     html2canvas(document.getElementById("html2image"))
+    //             .then(function(canvas) {
+    //                 document.body.appendChild(canvas)
+    //             })}
+               
+
+    // } 
+    // $(document).ready(function() {
+    //             $("#download").click(function() {
+    //                 var scale = 2;
+    //                 var domNode = document.getElementById('htmltoimage')
+    //                 domtoimage.toBlob(domNode, {
+    //                 width: domNode.clientWidth * scale,
+    //                 height: domNode.clientHeight * scale,
+    //                 style: {
+    //                 transform: 'scale('+scale+')',
+    //                 transformOrigin: 'top left'
+    //                 }}).then(function (dataUrl) {
+    //             var link = document.createElement('a');
+    //             link.download = 'my-image-name.jpeg';
+    //             link.href = dataUrl;
+    //             link.click();
+    //         });
+                
+    //         })})
+
+    // $(document).ready(function() {
+    //     $("#download").click(function() {
+        
+    //         var domNode = document.getElementById('htmltoimage');
+    //         domtoimage.toPng(domNode, {style:{ with:"520px", height:"170px"}})
+    // .then(function (dataUrl) {
+    //     var link = document.createElement('a');
+    //     link.download = 'my-image-name.jpeg';
+    //     link.href = dataUrl;
+    //     link.click();
+    // })
+    //     })
+    // })
+</script>
+
+
+
+
+<%-include('include/_footer.ejs') %> 

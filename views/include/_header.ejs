@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="#">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.j"></script> -->
+</head>
+<body>
+    <header class="header" id="headers">
+        <p>Admin Login</p>   
+        <form action="/login" method="get" id="re_do">
+            <table class="re-do">
+                <tr><td>Username : </td><td><input type="text" name="user_name"></td></tr>
+                <tr><td>Password : </td><td><input type="password" name="password"></td></tr>
+                <tr><td><input type="submit" value="login"></td></tr>
+            </table>
+           
+        </form>
+        <label for=""><i class="fas fa-door-open" id="open"></i></label>
+        <label for=""><i class="fas fa-door-closed" id="closed"></i></label>
+       
+        <ul>
+          <li><a href=""><i class="fas fa-home"></i>Home</a></li>
+          <li><a href=""><i class="fas fa-address-card"></i>About</a></li>
+          <li><a href=""><i class="fas fa-id-card-alt"></i>Contact</a></li>
+      </ul>
+    </header>
+   
+
+    <script>
+
+        let closeIt = document.getElementById("closed");
+        let openIt =  document.getElementById("open");
+        
+          
+          closeIt.addEventListener("click", function(){
+            let head = document.getElementById("headers");
+            let footer = document.getElementById("foot");
+              head.style.left = "-100%"
+              openIt.style.display ="block"
+              footer.style.left = "0"
+          })
+          
+          openIt.addEventListener("click", function(){
+            let head = document.getElementById("headers");
+            let footer = document.getElementById("foot");
+              head.style.left = "0"
+              openIt.style.display ="none"
+              footer.style.left = "300px"
+          })
+         
+          
+        </script>
+        

@@ -1,0 +1,64 @@
+<%-include('include/_main_header.ejs') %> 
+
+<div class="form_p"><p>Input Your Data</p></div>
+
+<form action="/adduser" method="POST" enctype="multipart/form-data" id="add-user" class="form forms">
+    <table>
+        <tr><td>Full Name :</td><td><input type="text" name="name" required></td></tr>
+        <tr><td>Occupation :</td><td><input type="text" name="job" required></td></tr>
+
+        <tr><td>State :</td>
+            <td>
+                <select name="state" id="state" required>
+                    <option value="">Select Your State...</option>
+                    <option value="ABIA">ABIA</option>
+                    <option value="ADAMAWA">ADAMAWA</option>
+                    <option value="AKWA IBOM">AKWA IBOM</option>
+                    <option value="ANAMBRA">ANAMBRA</option>
+                    <option value="BAUCHI">BAUCHI</option>
+                    <option value="BAYELSA">BAYELSA</option>
+                    <option value="BENUE">BENUE</option>
+                    <option value="BORNO">BORNO</option>
+                    <option value="CROSS RIVER">CROSS RIVERS</option>
+                    <option value="DELTA">DELTA</option>
+                    <option value="EBONYI">EBONYI</option>
+                    <option value="EDO">EDO</option>
+                    <option value="EKITI">EKITI</option>
+                    <option value="ENUGU">ENUGU</option>
+                    <option value="GOMBE">GOMBE</option>
+                    <option value="IMO">IMO</option>
+                    <option value="JIGAWA">JIGAWA</option>
+                    <option value="KADUNA">KADUNA</option>
+                    <option value="KANO">KANO</option>
+                    <option value="KASTINA">KASTINA</option>
+                    <option value="KEBBI">KEBBI</option>
+                    <option value="KOGI">KOGI</option>
+                    <option value="KWARA">KWARA</option>
+                    <option value="LAGOS">LAGOS</option>
+                    <option value="NIGER">NIGER</option>
+                    <option value="OGUN">OGUN</option>
+                    <option value="ONDO">ONDO</option>
+                    <option value="OSUN">OSUN</option>
+                    <option value="OYO">OYO</option>
+                    <option value="PLATEAU">PLATEAU</option>
+                    <option value="RIVERS">RIVERS</option>
+                    <option value="SOKOTO">SOKOTO</option>
+                    <option value="TARABA">TARABA</option>
+                    <option value="YOBE">YOBE</option>
+                    <option value="ZAMFARA">ZAMFARA</option>
+                    <option value="FCT">FCT</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr><td>Email:</td><td><input type="text" name="email" pattern="[a-z 0-9 ._%+-]+@[a-z 0-9 .-]+\.[a-z]{2,3}$" required placeholder="example@email.com"></td></tr>
+        <tr><td>Twitter Username :</td><td><input type="text" name="username" required></td></tr>
+        <tr><td>Phone NO:</td><td><input type="number" name="number" required></td></tr>
+        <tr><td>Your Image</td><td><input type="file" id="image" name="image" value="" required></td></tr>
+        <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+    </table>
+</form>
+
+
+
+<%-include('include/_footer.ejs') %>

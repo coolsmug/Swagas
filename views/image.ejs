@@ -1,0 +1,13 @@
+
+<%-include('include/_header')  %> 
+
+
+    <h1>Upload Image</h1>
+    <form action="/uploadphoto" enctype="multipart/form-data" method="POST">
+        <input type="file" name="myImage" accept="image/*">
+        <input type="submit" value="Upload Photo">
+    </form>
+<a href="/next" class='a-lom'>Next</a>
+
+
+<%-include('include/_footer.ejs') %>
