@@ -1,17 +1,3 @@
-// const htmlToImage = require('html-to-image')
-
-//   document.querySelector('cover').addEventListener('click', downloadImage);
-// function downloadImage(e){
-//   htmlToImage.toJpeg(e.currentTarget, { quality: 0.95 })
-//   .then(function (dataUrl) {
-//     var link = document.createElement('a');
-//     link.download = 'my-image-name.jpeg';
-//     link.href = dataUrl;
-//     link.click();
-//     link.remove();
-//   });
-// }
-
 
 $("#add-user").submit(function (event) {
   alert("Data Inserted Successfull!");
@@ -30,7 +16,7 @@ $("#update_user").submit(function (event) {
   console.log(data);
 
   var request = {
-    url: `http://localhost:1988/update-user/${data.id}`,
+    url: `http://localhost:5000/update-user/${data.id}`,
     method: "POST",
     data: data,
   };
@@ -47,7 +33,7 @@ if (window.location.pathname == "/all_user") {
     var id = $(this).attr("data-id");
 
     var request = {
-      url: `http://localhost:1988/delete/${id}`,
+      url: `http://localhost:5000/delete/${id}`,
       method: "DELETE",
     };
 
