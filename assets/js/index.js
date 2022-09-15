@@ -16,7 +16,7 @@ $("#update_user").submit(function (event) {
   console.log(data);
 
   var request = {
-    url: `http://localhost:5000/update-user/${data.id}`,
+    url: `https://swagaa.herokuapp.com/update-user/${data.id}`,
     method: "POST",
     data: data,
   };
@@ -33,7 +33,7 @@ if (window.location.pathname == "/all_user") {
     var id = $(this).attr("data-id");
 
     var request = {
-      url: `http://localhost:5000/delete/${id}`,
+      url: `https://swagaa.herokuapp.com/delete/${id}`,
       method: "DELETE",
     };
 
